@@ -1,0 +1,25 @@
+@use "src/app/utilities/variables" as *;
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+
+    button {
+        margin: 0 5px 0 5px;
+    }
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: $m-device-break-point) {
+    .flex-container {
+        flex-direction: column;
+
+        button {
+            margin: 5px 0 5px 0;
+        }
+    }
+}

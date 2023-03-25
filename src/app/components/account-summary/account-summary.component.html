@@ -1,0 +1,25 @@
+<button class="btn-primary" (click)="onFetchAccountData()">
+  Fetch Account Summary
+</button>
+<ng-container *ngIf="accountData.data?.length">
+  <table>
+    <thead>
+      <th class="head">Id</th>
+      <th class="head">Accound Id</th>
+      <th class="head">Bank Name</th>
+      <th (click)="sortTable()" style="cursor:pointer">
+        Balance {{ accountData.sortingOrder === "desc" ? "▼" : "▲" }}
+      </th>
+      <th class="head">Currency</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of accountData.data">
+        <td data-label="Id">{{ data.id }}</td>
+        <td data-label="Accound Id">{{ data.accountId }}</td>
+        <td data-label="Bank Name">{{ data.bank }}</td>
+        <td data-label="Balance">{{ data.balance }}</td>
+        <td data-label="Currency">{{ data.currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
